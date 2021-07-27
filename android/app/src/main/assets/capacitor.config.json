@@ -1,0 +1,6 @@
+{
+	"appId": "com.derrick.playground",
+	"appName": "Playground",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

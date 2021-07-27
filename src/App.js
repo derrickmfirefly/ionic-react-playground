@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+// React packages
 
-function App() {
+// Redux
+
+// Styling
+import "./App.css";
+import "@ionic/react/css/core.css"
+
+// Components
+import { TodoList } from "./todo/TodoList";
+import { IonApp, IonContent, IonHeader, IonToolbar } from '@ionic/react'
+
+export default function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <IonApp>
+
+      <IonToolbar className="header toolbar">
+        <IonHeader>React App</IonHeader>
+      </IonToolbar>
+
+      <IonContent>
+        <TodoList></TodoList>
+      </IonContent>
+
+    </IonApp>
   );
 }
-
-export default App;
