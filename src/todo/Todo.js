@@ -30,12 +30,17 @@ export const Todo = ({todo}) => {
 
   return (
     <IonCard className="card">
+
       <IonLabel>{todo.id}</IonLabel>
+
       <IonCardHeader>{todo.title}</IonCardHeader>
+
       <IonCardSubtitle>{todo.isComplete + ''}</IonCardSubtitle>
-      <IonButton className="btnComplete" onClick={() => complete()}>
-        Complete
+
+      <IonButton className="btnComplete" color={todo.isComplete ? "danger" : "success"} onClick={() => complete()}>
+        {todo.isComplete ? ' Mark Incomplete' : 'Mark Complete'}
       </IonButton>
+
     </IonCard>
   );
 };
