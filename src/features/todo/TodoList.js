@@ -1,10 +1,11 @@
 // React
+import { useState } from 'react'
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
 
 // Reducers
-import { addTodo, removeTodo } from './todoSlice'
+import { addTodo } from './todoSlice'
 
 // Components
 import { Todo } from "./Todo";
@@ -14,6 +15,7 @@ import {
   IonCol, 
   IonButton,  
   IonHeader,
+  IonInput,
 } from "@ionic/react";
 
 // Style
@@ -22,21 +24,24 @@ import "@ionic/react/css/core.css"
 
 export const TodoList = () => {
 
+  const [newTaskTitle, setNewTaskTitle] = useState(null)
+
   const todos = useSelector((state) => state.todos.value); // pull our todos from redux store
   const todosCount = useSelector((state) => state.todos.count); // pull count of todos from redux store
   const dispatch = useDispatch();
 
   const add = () => {
-    const todo = {
-      id: todos.length + 1,
-      title: "Task " + (todos.length + 1),
-      isComplete: false
+    if (newTaskTitle) {
+      const todo = {
+        id: todos.length + 1,
+        title: newTaskTitle,
+        isComplete: false
+      }
+      dispatch(addTodo(todo))
+    } else {
+      console.error('No task title')
     }
-    dispatch(addTodo(todo))
-  }
-
-  const remove = () => {
-    dispatch(removeTodo(1))
+    setNewTaskTitle(null)
   }
 
   return (
@@ -46,12 +51,10 @@ export const TodoList = () => {
         Number of Tasks: <strong>{todosCount}</strong>
       </IonHeader>
 
+      <IonInput value={newTaskTitle} onIonChange={e => setNewTaskTitle(e.detail.value)} placeholder="New Task"></IonInput>
+
       <IonButton onClick={() => add()}>
         Add Todo
-      </IonButton>
-
-      <IonButton onClick={() => remove()}>
-        Remove Todo
       </IonButton>
 
       <IonRow>

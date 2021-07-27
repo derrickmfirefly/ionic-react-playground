@@ -4,15 +4,15 @@
 import { useDispatch } from "react-redux";
 
 // Reducers
-import { updateTodo } from "./todoSlice";
+import { removeTodo, updateTodo } from "./todoSlice";
 
 // Components
 import { 
   IonButton, 
   IonCard, 
-  IonCardHeader, 
   IonCardSubtitle,  
   IonLabel,
+  IonCardHeader,
 } from '@ionic/react'
 
 // Style
@@ -28,23 +28,32 @@ export const Todo = ({todo}) => {
     dispatch(updateTodo(todo.id));
   };
 
+  const remove = () => {
+    dispatch(removeTodo(todo.id))
+  }
+
   return (
     <IonCard className="card">
 
       <IonLabel>ID: {todo.id}</IonLabel>
 
-      <IonCardHeader>{todo.title}</IonCardHeader>
+      <IonCardHeader className="card-text">{todo.title}</IonCardHeader>
 
       <IonCardSubtitle>{todo.isComplete + ''}</IonCardSubtitle>
 
       <IonButton 
-        className="btnComplete" 
-        expand="block" 
+        className="btnComplete"
         color={todo.isComplete ? "danger" : "success"} 
         onClick={() => complete()}
       >
         {todo.isComplete ? ' Mark Incomplete' : 'Mark Complete'}
       </IonButton>
+
+      {todo.isComplete ? 
+        <IonButton onClick={() => remove()}>
+          Remove Todo
+        </IonButton> : null
+      }
 
     </IonCard>
   );
