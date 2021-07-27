@@ -43,7 +43,7 @@ export const TodoList = () => {
     <IonGrid>
 
       <IonHeader>
-        {todosCount}
+        Number of Tasks: {todosCount}
       </IonHeader>
 
       <IonButton onClick={() => add()}>
