@@ -29,7 +29,7 @@ export const TodoList = () => {
   const add = () => {
     const todo = {
       id: todos.length + 1,
-      title: "New",
+      title: "Task " + (todos.length + 1),
       isComplete: false
     }
     dispatch(addTodo(todo))

@@ -7,7 +7,7 @@ import "./App.css";
 import "@ionic/react/css/core.css"
 
 // Components
-import { TodoList } from "./todo/TodoList";
+import { TodoList } from "./features/todo/TodoList";
 import { IonApp, IonContent, IonHeader, IonToolbar } from '@ionic/react'
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
     <IonApp>
 
       <IonToolbar className="header toolbar">
-        <IonHeader>React App</IonHeader>
+        <IonHeader>Ionic React Playground</IonHeader>
       </IonToolbar>
 
       <IonContent>
