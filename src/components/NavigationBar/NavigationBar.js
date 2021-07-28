@@ -16,11 +16,13 @@ import { Route } from 'react-router-dom';
 import {
     home,
     list,
+    settings,
 } from 'ionicons/icons'
 
 // Pages
 import { HomePage } from '../../pages/HomePage/HomePage'
 import { TodoPage } from '../../pages/TodoPage/TodoPage'
+import { SettingsPage } from '../../pages/Settings/SettingsPage';
 
 export const NavigationBar = () => {
     return (
@@ -33,6 +35,9 @@ export const NavigationBar = () => {
                 <Route path="/todo">
                     <TodoPage />
                 </Route>
+                <Route path="/settings">
+                    <SettingsPage />
+                </Route>
             </IonRouterOutlet>
             {/* Tab Bar Buttons */}
             <IonTabBar slot="bottom">
@@ -41,6 +46,9 @@ export const NavigationBar = () => {
                 </IonTabButton>
                 <IonTabButton tab="todo" href="/todo">
                     <IonIcon icon={list}/>
+                </IonTabButton>
+                <IonTabButton tab="settings" href="/settings">
+                    <IonIcon icon={settings}/>
                 </IonTabButton>
             </IonTabBar>
 

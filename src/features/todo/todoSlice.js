@@ -2,7 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // Functions
-const saveTodosToStorage = (todos) => {
+const saveTodosToLocalStorage = (todos) => {
   const save = JSON.stringify(todos)
   localStorage.setItem('todos', save)
 }
@@ -20,14 +20,14 @@ export const todoSlice = createSlice({
     addTodo: (state, { payload }) => {
       state.value.push(payload);
       state.count++;
-      saveTodosToStorage(state);
+      saveTodosToLocalStorage(state);
     },
 
     // payload is array of todo objects
     setTodos: (state, { payload }) => {
       state.value = payload;
       state.count = payload.length;
-      saveTodosToStorage(state);
+      saveTodosToLocalStorage(state);
     },
 
     // payload is id of todo removed
@@ -36,7 +36,7 @@ export const todoSlice = createSlice({
       state.value = todos;
       state.value.map((todo, i) => todo.id = i + 1);
       state.count = state.value.length;
-      saveTodosToStorage(state);
+      saveTodosToLocalStorage(state);
     },
     
     // payload is the id of the item to be completed
@@ -44,7 +44,7 @@ export const todoSlice = createSlice({
       const current = state.value[payload - 1].isComplete;
       state.value[payload - 1].isComplete = !current;
       state.count = state.value.length;
-      saveTodosToStorage(state);
+      saveTodosToLocalStorage(state);
     }
   }
 });
