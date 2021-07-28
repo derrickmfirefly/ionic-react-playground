@@ -9,25 +9,18 @@ import "@ionic/react/css/core.css"
 // Components
 import { TodoList } from "./features/todo/TodoList";
 import { 
-  IonApp, 
-  IonContent, 
-  IonHeader, 
-  IonToolbar 
+  IonApp,
 } from '@ionic/react'
+import { IonReactRouter } from '@ionic/react-router';
+import { NavigationBar } from "./components/NavigationBar/NavigationBar";
 
 export default function App() {
   
   return (
     <IonApp>
-
-      <IonToolbar className="header toolbar">
-        <IonHeader>Ionic React Playground</IonHeader>
-      </IonToolbar>
-
-      <IonContent>
-        <TodoList></TodoList>
-      </IonContent>
-
+      <IonReactRouter>
+        <NavigationBar />
+      </IonReactRouter>
     </IonApp>
   );
 }
