@@ -1,0 +1,7 @@
+FEATURES:
+
+This directory should contain all components that are feature specific
+
+Example Feature Ideas: TodoList, Timer, Automation, etc...
+
+This is where all the core logic for a feature should reside

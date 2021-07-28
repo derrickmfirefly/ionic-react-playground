@@ -1,0 +1,10 @@
+COMPONENTS:
+
+This directory should contain ONLY generic / core COMPONENTS
+
+Examples: navigation bar, tool bar, status bar, etc. 
+
+Components on Pages:
+
+1) if component is used ONLY on one page, place component in '/ pages / [page_name] / [component_name].js'
+2) if component is used on MULTIPLE pages, place component in '/ components / [component_name] / [component_name].js'

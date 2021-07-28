@@ -1,0 +1,11 @@
+PAGES:
+
+This directory should only contain full page content views.
+NO logic should exist in the page files. Logic for pages should reside in the components the page loads, or the features it loads.
+
+Examples: HomePage, LightsPage, TodoPage, etc...
+
+Components on Pages:
+
+1) if component is used ONLY on one page, place component in '/ pages / [page_name] / [component_name].js'
+2) if component is used on MULTIPLE pages, place component in '/ components / [component_name] / [component_name].js'
