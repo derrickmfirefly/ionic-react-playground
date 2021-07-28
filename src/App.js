@@ -9,7 +9,8 @@ import "@ionic/react/css/core.css"
 // Components
 import { TodoList } from "./features/todo/TodoList";
 import { 
-  IonApp,
+  IonApp, 
+  IonToolbar,
 } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router';
 import { NavigationBar } from "./components/NavigationBar/NavigationBar";

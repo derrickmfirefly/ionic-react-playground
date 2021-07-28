@@ -6,3 +6,8 @@
 .card-text {
   font-size: x-large;
 }
+
+.count-header {
+  font-size: large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}

@@ -1,9 +1,18 @@
+// React
 import React from 'react'
+
+// Components
+import {    
+    IonToolbar,
+    IonTitle,
+} from '@ionic/react'
 
 export const HomePage = () => {
     return (
         <div>
-            <h1>Home</h1>
+            <IonToolbar color="dark">
+                <IonTitle>Home</IonTitle>
+            </IonToolbar>
         </div>
     )
 }

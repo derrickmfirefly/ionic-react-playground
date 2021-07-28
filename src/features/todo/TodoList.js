@@ -47,13 +47,13 @@ export const TodoList = () => {
   return (
     <IonGrid>
 
-      <IonHeader>
+      <IonHeader className="count-header">
         Number of Tasks: <strong>{todosCount}</strong>
       </IonHeader>
 
       <IonInput value={newTaskTitle} onIonChange={e => setNewTaskTitle(e.detail.value)} placeholder="New Task"></IonInput>
 
-      <IonButton onClick={() => add()}>
+      <IonButton expand="block" fill="outline" onClick={() => add()}>
         Add Todo
       </IonButton>
 
