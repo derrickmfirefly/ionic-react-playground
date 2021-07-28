@@ -8,7 +8,12 @@ import "@ionic/react/css/core.css"
 
 // Components
 import { TodoList } from "./features/todo/TodoList";
-import { IonApp, IonContent, IonHeader, IonToolbar } from '@ionic/react'
+import { 
+  IonApp, 
+  IonContent, 
+  IonHeader, 
+  IonToolbar 
+} from '@ionic/react'
 
 export default function App() {
   
