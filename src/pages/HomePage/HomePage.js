@@ -12,11 +12,11 @@ import {
 
 export const HomePage = () => {
 
-    const theme = useSelector((state) => state.settings.darkMode)
+    const theme = useSelector((state) => state.settings.theme)
 
     return (
         <div>
-            <IonToolbar color="dark">
+            <IonToolbar color={theme}>
                 <IonTitle>Home</IonTitle>
             </IonToolbar>
         </div>

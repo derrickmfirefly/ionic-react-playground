@@ -19,8 +19,7 @@ export const settingsSlice = createSlice({
     reducers: {
         // payload is boolean value
         setTheme: (state, { payload }) => {
-            console.log('payload', payload)
-            state.theme = payload;
+            state.theme = payload.toLowerCase();
             saveSettingsToLocalStorage(state)
         },
     }

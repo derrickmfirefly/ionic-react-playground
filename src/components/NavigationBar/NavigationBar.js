@@ -23,8 +23,12 @@ import {
 import { HomePage } from '../../pages/HomePage/HomePage'
 import { TodoPage } from '../../pages/TodoPage/TodoPage'
 import { SettingsPage } from '../../pages/Settings/SettingsPage';
+import { useSelector } from 'react-redux';
 
 export const NavigationBar = () => {
+
+    const theme = useSelector((state) => state.settings.theme)
+
     return (
         <IonTabs>
             {/* Define Routes for Pages */}
@@ -40,7 +44,7 @@ export const NavigationBar = () => {
                 </Route>
             </IonRouterOutlet>
             {/* Tab Bar Buttons */}
-            <IonTabBar slot="bottom">
+            <IonTabBar color={theme} slot="bottom">
                 <IonTabButton tab="home" href="/home">
                     <IonIcon icon={home}/>
                 </IonTabButton>

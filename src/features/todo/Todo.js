@@ -1,7 +1,7 @@
 // React
 
 // Redux
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // Reducers
 import { removeTodo, updateTodo } from "./todoSlice";
@@ -22,7 +22,9 @@ import "@ionic/react/css/core.css"
 
 
 export const Todo = ({todo}) => {
+
   const dispatch = useDispatch();
+  const theme = useSelector((state) => state.settings.theme)
 
   const complete = () => {
     dispatch(updateTodo(todo.id));
@@ -33,7 +35,7 @@ export const Todo = ({todo}) => {
   }
 
   return (
-    <IonCard className="card">
+    <IonCard color={theme} className="card">
 
       <IonLabel>ID: {todo.id}</IonLabel>
 

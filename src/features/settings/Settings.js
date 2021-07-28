@@ -12,6 +12,8 @@ import {
     IonItem,
     IonToggle,
     IonLabel,
+    IonSelect,
+    IonSelectOption,
 } from '@ionic/react'
 
 export const Settings = () => {
@@ -22,8 +24,15 @@ export const Settings = () => {
     return (
         <div>   
             <IonItem>
-                <IonToggle></IonToggle>
-                <IonLabel>Dark Mode</IonLabel>
+                <IonLabel>Theme: {settings.theme}</IonLabel>
+                <IonSelect
+                    interface="popover"
+                    value={settings.theme}
+                    onIonChange={(e) => dispatch(setTheme(e.detail.value))}
+                >
+                    <IonSelectOption>Dark</IonSelectOption>
+                    <IonSelectOption>Light</IonSelectOption>
+                </IonSelect>
             </IonItem>
         </div>
     )
