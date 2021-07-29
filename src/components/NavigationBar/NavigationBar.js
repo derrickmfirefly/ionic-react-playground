@@ -33,6 +33,9 @@ export const NavigationBar = () => {
         <IonTabs>
             {/* Define Routes for Pages */}
             <IonRouterOutlet>
+                <Route>
+                    <HomePage />
+                </Route>
                 <Route path="/home">
                     <HomePage />
                 </Route>

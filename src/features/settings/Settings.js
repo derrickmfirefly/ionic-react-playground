@@ -24,14 +24,18 @@ export const Settings = () => {
     return (
         <div>   
             <IonItem>
-                <IonLabel>Theme: {settings.theme}</IonLabel>
+                <IonLabel>Theme</IonLabel>
                 <IonSelect
                     interface="popover"
                     value={settings.theme}
                     onIonChange={(e) => dispatch(setTheme(e.detail.value))}
                 >
-                    <IonSelectOption>Dark</IonSelectOption>
-                    <IonSelectOption>Light</IonSelectOption>
+                    <IonSelectOption value="dark">Dark</IonSelectOption>
+                    <IonSelectOption value="medium">Medium</IonSelectOption>
+                    <IonSelectOption value="light">Light</IonSelectOption>
+                    <IonSelectOption value="primary">Primary</IonSelectOption>
+                    <IonSelectOption value="secondary">Secondary</IonSelectOption>
+                    
                 </IonSelect>
             </IonItem>
         </div>

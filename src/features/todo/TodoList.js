@@ -26,6 +26,7 @@ export const TodoList = () => {
 
   const [newTaskTitle, setNewTaskTitle] = useState(null)
 
+  const theme = useSelector((state) => state.settings.theme); // pull our theme for styling
   const todos = useSelector((state) => state.todos.value); // pull our todos from redux store
   const todosCount = useSelector((state) => state.todos.count); // pull count of todos from redux store
   const dispatch = useDispatch();
@@ -53,7 +54,7 @@ export const TodoList = () => {
 
       <IonInput value={newTaskTitle} onIonChange={e => setNewTaskTitle(e.detail.value)} placeholder="New Task"></IonInput>
 
-      <IonButton expand="block" fill="outline" onClick={() => add()}>
+      <IonButton expand="block" color={theme} onClick={() => add()}>
         Add Todo
       </IonButton>
 
